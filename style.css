@@ -1,0 +1,118 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling with a blinking background */
+  body {
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #00b4d8, #0096c7);
+    animation: blinkBackground 3s infinite alternate;
+  }
+  
+  /* Create the blinking background effect */
+  @keyframes blinkBackground {
+    0% {
+      background: linear-gradient(135deg, #070707, #f8fafa);
+    }
+    50% {
+      background: linear-gradient(135deg, #f8fafa, #00b4d8);
+    }
+    100% {
+      background: linear-gradient(135deg, #0096c7, #070707);
+    }
+  }
+  
+  /* WebGL content container */
+  .webgl-content {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Game container styling */
+  #gameContainer {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #111; /* Dark background for the game area */
+  }
+  
+  /* Footer styling */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+  }
+  
+  /* Logo and fullscreen button */
+  .webgl-logo {
+    width: 40px;
+    height: 40px;
+    background-image: url('coclogo.png'); /* Replace with your WebGL logo image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .fullscreen {
+    width: 35px;
+    height: 35px;
+    background-color: #0096c7;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .fullscreen:hover {
+    transform: scale(1.1);
+  }
+  
+  .fullscreen:active {
+    background-color: #007fa8;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700; /* Gold color for the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Add some responsiveness */
+  @media screen and (max-width: 768px) {
+    #gameContainer {
+      height: 400px; /* Adjust game container height for smaller screens */
+    }
+  
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .fullscreen {
+      margin-top: 10px;
+    }
+  }
+  
